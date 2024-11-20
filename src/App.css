@@ -40,3 +40,81 @@
     transform: rotate(360deg);
   }
 }
+.camera-container {
+  height: 100vh;
+  width: 60vw;
+  background-color: black;
+  overflow: hidden;
+}
+
+.captured-image {
+  height: 50vh;
+  width: 30vw;
+  object-fit: cover;
+}
+
+.absolute-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 25vh;
+  width: 60vw;
+  background-color: #00000023;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.musiccomponent {
+  height: 100vh;
+  width: 40vw;
+  overflow: scroll;
+  background-color: peachpuff;
+  overflow-x: hidden;
+}
+
+.song-container {
+  display: flex;
+  width: 90%;
+  height: 70px;
+  border-radius: 1rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.song-container:hover{
+  background-color: #00000034;
+  cursor: pointer;
+}
+.song-name_img {
+  display: flex;
+  height: 100%;
+  width: auto;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  max-width: 80%;
+}
+
+.song-name_img img{
+  height: 55px;
+  width:  55px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.songname{
+  text-overflow: ellipsis;
+  text-size-adjust:inherit;
+}
+
+.moreoptions {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  top: 50%;
+  bottom: 50%;
+}
