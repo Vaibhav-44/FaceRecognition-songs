@@ -80,13 +80,20 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 20px 0 10px;
+  box-sizing: border-box;
 }
 
-.song-container:hover{
+.song-container:hover {
   background-color: #00000034;
   cursor: pointer;
+  transition: background-color 1s ease;
 }
+.song-container:not(:hover) {
+  background-color: transparent;
+  transition: background-color 1s ease;
+}
+
 .song-name_img {
   display: flex;
   height: 100%;
@@ -97,16 +104,16 @@
   max-width: 80%;
 }
 
-.song-name_img img{
+.song-name_img img {
   height: 55px;
-  width:  55px;
+  width: 55px;
   object-fit: cover;
   border-radius: 10px;
 }
 
-.songname{
+.songname {
   text-overflow: ellipsis;
-  text-size-adjust:inherit;
+  text-size-adjust: inherit;
 }
 
 .moreoptions {

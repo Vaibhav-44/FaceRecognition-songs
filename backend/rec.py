@@ -13,7 +13,7 @@ class Moodify:
     def get_songs(self, image_location, list_limit, offset=0): 
         image = cv2.imread(image_location)
         result = DeepFace.analyze(image, actions=['emotion'])
-
+        
         query = str(max(zip(result[0]['emotion'].values(),
                         result[0]['emotion'].keys()))[1])
         

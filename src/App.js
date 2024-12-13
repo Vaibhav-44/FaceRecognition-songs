@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
@@ -6,9 +5,7 @@ import { useRef, useState } from "react";
 import { Camera } from "react-camera-pro";
 import FlatList from "flatlist-react";
 import SadGirl from "./assets/sad-women.webp";
-// import fs from 'fs'
-import fs from 'fs-react'
-import {saveAs} from 'file-saver'
+import { saveAs } from "file-saver";
 const songData = [
   {
     uri: "spotify:track:3ee8Jmje8o58CHK66QrVC2",
@@ -358,24 +355,20 @@ function App() {
         //   console.log(err)
         // );
 
-        await saveAs(image, "../backend/image.png")
+        await saveAs(image, "image.png");
 
         const headers = {
           Accept: "application/json",
           "Content-Type": "application/json",
         };
         const response = await fetch(
-          "http://localhost:8000/song-list?limit=10?image_location=image.png",
-          {
-            method: "GET",
-            headers,
-          }
+          "http://localhost:8000/song-list/?limit=10&image_location=image.png"
         );
-        const data = response.json();
+        const data = await response.json();
         setSongListData(data);
         console.log(data);
 
-        console.log("Image uploaded successfully:", response.data);
+        console.log("Image uploaded successfully:", data);
       } catch (error) {
         console.error("Error uploading image:", error);
       }
@@ -447,11 +440,11 @@ function App() {
             {image ? "Take another" : "Take photo"}
           </button>
 
-          {image && (
+          {/* {image && (
             <button onClick={downloadImage} className="download-button">
               Download
             </button>
-          )}
+          )} */}
 
           {image && (
             <button onClick={submitHandler} className="submit-button">
